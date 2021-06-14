@@ -6,7 +6,8 @@ import (
     "math"
 )
 
-func Test (list []reader.ChiSquare, count float64) {
+//perform a chisquare gof test on the current distribution
+func Test (list []reader.State, count float64) {
     var chiSquaredStat float64
     expvalues := make([]float64,len(list))
     obsvalues := make([]float64,len(list))
@@ -32,7 +33,9 @@ func Test (list []reader.ChiSquare, count float64) {
 	fmt.Println(chiSquaredStat)
 }
 
-func Redistrict (list []reader.ChiSquare, count float64) {
+
+//print out population balenced redistrictings
+func Redistrict (list []reader.State, count float64) {
     expvalues := make([]float64,len(list))
     obsvalues := make([]float64,len(list))
 
@@ -54,7 +57,8 @@ func Redistrict (list []reader.ChiSquare, count float64) {
      }
 }
 
-func Max (list []reader.ChiSquare, senatorCount int) {
+//find the max possible electors and representatives per state
+func Max (list []reader.State, senatorCount int) {
     var totalElectors int
     var totalReps int
     for _, state := range list {
