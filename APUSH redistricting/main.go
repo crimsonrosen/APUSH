@@ -10,7 +10,6 @@ func main() {
 	//conditions
 	purpose := flag.String("purpose", "test", "test/redistrict/getmax function")
 	electCount := flag.Int("count", 538, "total number of electors")
-	senators := flag.Int("senators", 2, "how many senators per state")
 	row4 := flag.Bool("row4", false, "custom senators bool")
 	flag.Parse() 
 
@@ -24,7 +23,7 @@ func main() {
 	} else if *purpose == "redistrict" {
 		functions.Redistrict(List, float64(*electCount))
 	} else if *purpose == "getmax" {
-		functions.Max(List, *senators)
+		functions.Max(List)
 	}
 	
 }

@@ -13,6 +13,7 @@ type State struct {
 	Electors float64
 	Pop float64
 	Senators float64
+	Reps float64
 }
 
 func Readfile (filename string, row4 bool) []State {
@@ -52,6 +53,7 @@ func Readfile (filename string, row4 bool) []State {
 				Electors : finalElect,
 				Pop : finalPop,
 				Senators: formSenate[i],
+				Reps : finalElect-2,
 			}
 
 		}
